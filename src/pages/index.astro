@@ -1,16 +1,27 @@
 ---
+import MenuComponent from "../components/menu.astro";
+import FooterComponent from "../components/footer.astro";
 
+const pageTitle = "";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Arkham Horror</title>
-	</head>
-	<body>
-		<h1>Arkham Horror</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Arkham Horror - {pageTitle}</title>
+  </head>
+  <body>
+    <MenuComponent />
+    <h1>Arkham Horror</h1>
+    <FooterComponent />
+
+    <script>
+      document.querySelector("h1")?.addEventListener("click", () => {
+        alert('alive!')
+      });
+    </script>
+  </body>
 </html>
