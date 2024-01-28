@@ -14,9 +14,9 @@ const complete = pageTexts.map((cols, pageIndex) => {
 
     // const colTexts = cols.map((text, colIndex) => {
     //     return `## ${pageHeader} Col ${colIndex + 1}
-        
+
     //     ${text}
-        
+
     //     `
     // }).join('');
 
@@ -33,7 +33,12 @@ const padded = complete.split('\n').map(text => text.trim()).join('\n');
 
 await fs.writeFile('../src/pages/original.md', padded)
 
-// pageTexts.forEach((pageText, index) => {
-//     fs.writeFile(`../src/pages/original/${index}.md`, pageText)
+pageTexts.forEach((pageText, index) => {
+    fs.writeFile(`../src/pages/original-pages/${index}.md`, `---
+layout: ../layouts/md.astro
+title: Original instruction
+---
 
-// })
+${pageText}
+`  )
+})

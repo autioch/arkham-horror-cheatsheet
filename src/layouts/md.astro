@@ -21,7 +21,21 @@ const { pageTitle = "" } = Astro.props;
     <div class="flex">
       <MenuComponent />
       <main class="p-4">
-        <slot />
+        <div
+          class="text-orange-500
+          prose dark:prose-invert
+  prose-h1:font-bold prose-h1:text-xl
+  prose-h1:text-gray-50
+  prose-h2:text-gray-50
+  prose-h3:text-gray-50
+  prose-h4:text-gray-50
+  prose-p:text-gray-50
+  prose-li:text-gray-50
+  prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
+  prose-headings:underline"
+        >
+          <slot />
+        </div>
       </main>
     </div>
   </body>
