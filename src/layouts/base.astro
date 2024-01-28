@@ -1,6 +1,5 @@
 ---
 import MenuComponent from "../components/menu.astro";
-import FooterComponent from "../components/footer.astro";
 
 import "../styles/global.scss";
 type Props = {
@@ -18,9 +17,12 @@ const { pageTitle = "" } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>Arkham Horror{pageTitle.length ? ` - ${pageTitle}` : ""}</title>
   </head>
-  <body class="w-6/12 m-auto">
-    <MenuComponent />
-    <slot />
-    <FooterComponent />
+  <body class="w-6/12 m-auto bg-gray-900 text-gray-50">
+    <div class="flex">
+      <MenuComponent />
+      <main class="p-4">
+        <slot />
+      </main>
+    </div>
   </body>
 </html>
