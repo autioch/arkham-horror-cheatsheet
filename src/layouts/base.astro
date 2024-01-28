@@ -3,7 +3,7 @@ import MenuComponent from "../components/menu.astro";
 
 import "../styles/global.scss";
 type Props = {
-  pageTitle: string;
+  pageTitle?: string;
 };
 
 const { pageTitle = "" } = Astro.props;
