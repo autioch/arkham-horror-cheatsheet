@@ -1,15 +1,8 @@
 [class^=card-] {
-    display: inline-flex;
-    align-items: center;
-    font-weight: 700;
 
     &::before {
-        content: '';
         width: 3em;
         height: 3em;
-        margin-right: .25em;
-        background-size: contain;
-        background-position: center center;
     }
 }
 

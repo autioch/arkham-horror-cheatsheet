@@ -16,4 +16,4 @@ const labels: Record<Props["type"], string> = {
 const { type, multi } = Astro.props;
 ---
 
-<span class:list={`token-${type}`}>{labels[type]} Token{multi ? "s" : ""}</span>
+<span class:list={`token-${type}`} class="with-icon">{labels[type]} Token{multi ? "s" : ""}</span>

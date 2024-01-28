@@ -16,4 +16,4 @@ const labels: Record<Props["type"], string> = {
 const { type } = Astro.props;
 ---
 
-<span class:list={`card-${type}`}>{labels[type]} Card</span>
+<span class:list={`card-${type}`} class="with-icon">{labels[type]} Card</span>
