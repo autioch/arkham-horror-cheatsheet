@@ -2,24 +2,25 @@
 layout: ../../layouts/md.astro
 title: Original instruction
 ---
+import Notice from '../../components/notice.astro'
 
-# Page 19
-
-### Konsekwencje przekroczenia limitu potworów na Peryferiach
 
 W momencie, w którym liczba potworów na Peryferiach przekroczy powyższy limit, należy podnieść poziom paniki o 1, a żetony potworów (z pola Peryferii) odłożyć do puli potworów.
 
-### Poziom paniki
+## Poziom paniki
 
 _Tor paniki_ przedstawia obecny poziom paniki, która panuje w Arkham – obecny stan psychiczny mieszkańców miasteczka. Poziom paniki może wzrosnąć za sprawą różnych czynników, np. zbyt dużo potworów przebywa na Peryferiach lub wpłynie nań efekt jakiejś karty Mitów. Poziom paniki nigdy nie spada, dlatego gracze powinni bardzo uważać, kiedy pozwalają mu wzrosnąć.
 
-Kiedy poziom paniki wzrasta, należy przesunąć znacznik paniki w górę toru. Znacznik paniki nigdy nie może opuścić toru, dlatego poziom paniki nie może wzrosnąć powyżej 10. Jeśli poziom paniki wynosi 10 i ma zostać ponownie podniesiony (na przykład za sprawą specjalnej zdolności karty Mitów), zamiast przesuwać znacznik paniki, należy dołożyć jeden żeton zagłady do toru zagłady Przedwiecznego za każdy punkt, o który powinien wzrosnąć poziom paniki.
+Kiedy poziom paniki wzrasta, należy przesunąć znacznik paniki w górę toru. Znacznik paniki nigdy nie może opuścić toru, dlatego poziom paniki nie może wzrosnąć powyżej 10.
 
-#### _"Margie, pakuj walizki!"_
+Jeśli poziom paniki wynosi 10 i ma zostać ponownie podniesiony (na przykład za sprawą specjalnej zdolności karty Mitów), zamiast przesuwać znacznik paniki, należy dołożyć jeden żeton zagłady do toru zagłady Przedwiecznego za każdy punkt, o który powinien wzrosnąć poziom paniki.
+
+### _"Margie, pakuj walizki!"_
 
 Najbardziej oczywistym efektem poziomu paniki jest ucieczka ludzi z miasta. Za każdy punkt, o który wzrasta poziom paniki, należy odrzucić jedną, losową kartę z talii Sprzymierzeńców (odłożyć ją do pudełka). Dany Sprzymierzeniec stanie się do końca rozgrywki niedostępny. Jeśli wszyscy Sprzymierzeńcy zostaną...
 
-### OPIS ARKUSZA PRZEDWIECZNEGO
+<Notice header="Bitwa z przedwiecznymi">
+**OPIS ARKUSZA PRZEDWIECZNEGO**
 
 1. **Nazwa:** Nazwa Przedwiecznego.
 2. **Wartość walki:** To wartość walki Przedwiecznego. Używana tylko, jeśli Przedwieczny się przebudzi i Badacze będą musieli stanąć z nim do walki.
@@ -29,13 +30,14 @@ Najbardziej oczywistym efektem poziomu paniki jest ucieczka ludzi z miasta. Za k
 6. **Atak:** W tym miejscu opisano atak Przedwiecznego (wykorzystywany jedynie podczas walki z nim). Niektórzy Przedwieczni posiadają też zdolność rozpatrywaną „Na początku bitwy”. Taka zdolność wywiera wpływ tylko raz, na samym początku walki z Przedwiecznym.
 7. **Tor zagłady:** Ten tor wskazuje jak bliski przebudzenia się jest Przedwieczny.
 
-### BITWA Z PRZEDWIECZNYMI
+**BITWA Z PRZEDWIECZNYMI**
 
-#### Na początku bitwy
+**Na początku bitwy**
 
 Na początku bitwy z Przedwiecznym należy się upewnić, że jego tor zagłady jest całkowicie zapełniony. Następnie należy rozpatrzyć zdolności Przedwiecznego, które wchodzące w grę „Na początku bitwy”. Podczas każdej rundy bitwy Badacze przeprowadzają Fazę Utrzymania, a następnie po kolei atakują Przedwiecznego. Gracze powinni zapisywać całkowitą liczbę sukcesów, które uzyskali jako grupa. Gdy tylko zgromadzą liczbę sukcesów równą liczbie graczy lub wyższą (na przykład, 4 lub więcej sukcesów w grze na 4 graczy), usuwają 1 żeton zagłady z toru zagłady Przedwiecznego, a następnie odejmują taką samą liczbę sukcesów od sumy uzyskanych dotąd sukcesów (w tym przypadku 4 sukcesy). Kiedy każdy z Badaczy wykona swój atak, przychodzi czas na atak Przedwiecznego: Często gracze zostaną zmuszeni do wykonania jakiegoś testu umiejętności lub poniesienia jakichś nieprzyjemnych konsekwencji (wszystko zostało dokładnie opisane na arkuszu Przedwiecznego).
 
-#### Zakończenie bitwy
+**Zakończenie bitwy**
 
 Jeśli gracze usuną ostatni żeton zagłady z toru zagłady Przedwiecznego, udało im się go pokonać: wygrali grę!
 Jeśli wszyscy Badacze zostaną pochłonięci, nie udało im się powstrzymać nadejścia Przedwiecznego: przegrali.
+</Notice>

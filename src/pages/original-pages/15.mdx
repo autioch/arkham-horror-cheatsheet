@@ -2,10 +2,10 @@
 layout: ../../layouts/md.astro
 title: Original instruction
 ---
+import Notice from '../../components/notice.astro'
 
-# Page 15
 
-### 2. Walka lub ucieczka
+### Walka lub ucieczka
 
 Teraz gracz musi zdecydować: Czy spróbuje ucieczki czy też będzie walczyć z potworem.
 
@@ -23,7 +23,7 @@ Jeśli Badacz zda test walki, pokonuje potwora. Gracz usuwa żeton potwora z pla
 
 **Ważne:** Jeśli żywotność potwora wynosi więcej niż 1, częściowy sukces podczas testu walki nie wywiera żadnego efektu. Potwór musi zostać całkowicie pokonany w jednym teście walki albo wszystkie wyrzucone przez gracza sukcesy są pomijane.
 
-### 3. Obrażenia
+### Obrażenia
 
 Za każdym razem, kiedy Badaczowi nie powiedzie się test uników lub walki, potwór zada mu obrażenia. Ilość obrażeń, które zadaje potwór, znajduje się pod jego wartością walki. Badacz traci tyle Wytrzymałości ile otrzyma obrażeń. Gracz odrzuca odpowiednią liczbę żetonów Wytrzymałości ze swojej karty postaci Badacza. Badacz, którego Wytrzymałość spadnie do zera zostaje ogłuszony (patrz strona 16).
 
@@ -31,10 +31,11 @@ Warto zwrócić uwagę, że niektóre potwory posiadają zdolności, które do z
 
 **Przykład:** Pete’owi nie powiódł się test walki, dlatego Gwiezdny Pomiot zadaje mu obrażenia. Gwiezdny Pomiot zadaje 3 obrażenia, dlatego Pete traci trzy żetony Wytrzymałości. Posiniaczony, poraniony i odrobinę bardziej szalony, Pete przygotowuje się do kolejnej rundy walki.
 
-### WALKA
+<Notice header="Walka">
 
-**Przykład:** Amanda zdecydowała się walczyć ze Starszą Istotą. Pierwszą czynnością, którą musi wykonać jest test przerażenia. Wartość jej Woli wynosi 2, ale wartość przerażania Starszej Istoty (A) wynosi –3, co sprowadza ją do –1, czyli automatycznej porażki. Amanda traci 2 punkty Poczytalności, tak jak wskazano to na żetonie Starszej Istoty pod wartością przerażania. Zakładając, że utrata Poczytalności nie spowodowała u Amandy obłędu, może ona teraz wykonać test walki i spróbować pokonać Starszą Istotę.
+**Przykład:** Amanda zdecydowała się walczyć ze Starszą Istotą. Pierwszą czynnością, którą musi wykonać jest test przerażenia. Wartość jej Woli wynosi 2, ale wartość przerażania Starszej Istoty (A) wynosi –3, co sprowadza ją do –1, czyli automatycznej porażki. Amanda traci 2 punkty Poczytalności, tak jak wskazano to na żetonie Starszej Istoty pod wartością przerażania.
 
-Wartość jej Waleczności wynosi 3, a wartość walki Starszej Istoty (B) wynosi +0, co oznacza, że podczas testu Amanda będzie rzucać 3 kośćmi. Potwór posiada żywotność równą 2, dlatego Amanda musi uzyskać przynajmniej 2 sukcesy, aby go pokonać. Trzymając kciuki, gracz rzuca kośćmi i uzyskuje następujący wynik: „5” i „6” to sukcesy – Amanda uzyskała wymaganą liczbę sukcesów i pokonała Starszą Istotę. Gracz bierze żeton jako trofeum.
+Zakładając, że utrata Poczytalności nie spowodowała u Amandy obłędu, może ona teraz wykonać test walki i spróbować pokonać Starszą Istotę. Wartość jej Waleczności wynosi 3, a wartość walki Starszej Istoty (B) wynosi +0, co oznacza, że podczas testu Amanda będzie rzucać 3 kośćmi. Potwór posiada żywotność równą 2, dlatego Amanda musi uzyskać przynajmniej 2 sukcesy, aby go pokonać. Trzymając kciuki, gracz rzuca kośćmi i uzyskuje następujący wynik: „5” i „6” to sukcesy – Amanda uzyskała wymaganą liczbę sukcesów i pokonała Starszą Istotę. Gracz bierze żeton jako trofeum.
 
 Jeśli test walki by się nie powiódł, Starsza Istota zadałaby Amandzie 1 punkt obrażeń oraz zmusiłaby ją do utraty 1 wybranej Broni lub Zaklęcia. Amanda musiałaby następnie stoczyć kolejną rundę walki lub spróbować uciec. Nie musiałaby natomiast wykonywać kolejnego testu przerażenia, bowiem podczas tej walki wykonała już jeden taki test.
+</Notice>
