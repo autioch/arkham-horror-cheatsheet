@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/base.astro";
-// @ts-ignore  
+// @ts-ignore
 import { basename } from "node:path";
 
 const posts = await Astro.glob("./*.mdx");
@@ -20,11 +20,14 @@ const posts = await Astro.glob("./*.mdx");
     <ol id="toc" class="pl-6 h-dvh overflow-auto sticky top-0 flex-none">
       <script>
         const tocEl = document.getElementById("toc");
-        const paddingClass = {
+
+        type Tag = "H1" | "H2" | "H3" | "H4" | "H5";
+        const paddingClass: Record<Tag, string> = {
           H1: "pl-0",
           H2: "pl-2",
           H3: "pl-4",
           H4: "pl-6",
+          H5: "pl-8",
         };
         [...document.querySelectorAll("h1[id],h2[id],h3[id],h4[id]")].map(
           (el) => {
@@ -34,7 +37,10 @@ const posts = await Astro.glob("./*.mdx");
             aEl.href = `#${el.id}`;
             aEl.textContent = el.textContent;
 
-            liEl.classList.add(paddingClass[el.tagName], `toc-${el.tagName}`);
+            liEl.classList.add(
+              paddingClass[el.tagName as unknown as Tag],
+              `toc-${el.tagName}`
+            );
             liEl.append(aEl);
             tocEl?.append(liEl);
           }
