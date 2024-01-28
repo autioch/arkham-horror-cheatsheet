@@ -1,0 +1,19 @@
+---
+import "./card.scss";
+
+type Props = {
+  type: "ally" | "item-common" | "item-unique" | "skill" | 'spell'
+};
+
+const labels: Record<Props["type"], string> = {
+  ally: "Ally",
+  'item-common': "Common item",
+  'item-unique': "Unique item",
+  skill: "Skill",
+  spell: "Spell",
+};
+
+const { type } = Astro.props;
+---
+
+<span class:list={`card-${type}`}>{labels[type]} Card</span>

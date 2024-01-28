@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/base.astro";
+import Token from "../components/token/token.astro";
+import ActivePlayer from "../components/active-player/active-player.astro";
+import Card from '../components/card/card.astro'
+---
+
+<BaseLayout pageTitle="Legend">
+  <h2>Tokens</h2>
+  <ul class="text-xl list-disc list-inside">
+    <li>
+      <Token type="clue" />
+    </li>
+    <li>
+      <Token type="sanity" />
+    </li>
+    <li>
+      <Token type="slider" />
+    </li>
+    <li>
+      <Token type="stamina" />
+    </li>
+  </ul>
+  <h2>Cards</h2>
+  <ul class="text-xl list-disc list-inside">
+    <li>
+      <Card type="ally" />
+    </li>
+    <li>
+      <Card type="item-common" />
+    </li>
+    <li>
+      <Card type="item-unique" />
+    </li>
+    <li>
+      <Card type="skill" />
+    </li>
+    <li>
+      <Card type="spell" />
+    </li>
+  </ul>
+  <h2>Misc</h2>
+  <ul class="text-xl list-disc list-inside">
+    <li>
+      <ActivePlayer />
+    </li>
+  </ul>
+</BaseLayout>

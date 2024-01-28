@@ -1,0 +1,54 @@
+[class^=card-] {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+
+    &::before {
+        content: '';
+        width: 3em;
+        height: 3em;
+        margin-right: .25em;
+        background-size: contain;
+        background-position: center center;
+    }
+}
+
+.card-ally {
+    @apply text-yellow-700;
+
+    &::before {
+        background-image: url('./images/ally.png');
+    }
+}
+
+.card-item-common {
+    @apply text-lime-700;
+
+    &::before {
+        background-image: url('./images/item-common.png');
+    }
+}
+
+.card-item-unique {
+    @apply text-red-500;
+
+    &::before {
+        background-image: url('./images/item-unique.png');
+    }
+}
+
+.card-skill {
+    @apply text-amber-500;
+
+    &::before {
+        background-image: url('./images/skill.png');
+    }
+}
+
+.card-spell {
+    @apply text-violet-500;
+
+    &::before {
+        background-image: url('./images/spell.png');
+    }
+}

@@ -1,28 +1,33 @@
 ---
-import MenuComponent from "../components/menu.astro";
-import FooterComponent from "../components/footer.astro";
-
-const pageTitle = "Game setup";
+import BaseLayout from "../layouts/base.astro";
+import Token from "../components/token/token.astro";
+import LocationUnstable from "../components/location-unstable.astro";
+import ActivePlayer from "../components/active-player/active-player.astro";
+import Investigator from "../components/investigator.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Arkham Horror - {pageTitle}</title>
-  </head>
-  <body>
-    <MenuComponent />
-    <h1>Arkham Horror - {pageTitle}</h1>
-		<a href="/">Index</a>
-    <style>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-    </style>
-    <FooterComponent />
-  </body>
-</html>
+<BaseLayout pageTitle="Game setup">
+  <ol class="list-decimal">
+    <li>Prepare playing area.</li>
+    <li>Place <Token type="clue" /> on <LocationUnstable />.</li>
+    <li>Select first player and give <ActivePlayer /> to them.</li>
+    <li>Detemine <Investigator /></li>
+    <li>Choose ancient one randomly</li>
+    <li>Place decks</li>
+    <li>Hand out fixed possessions</li>
+    <li>Shuffle <Investigator /> decks</li>
+    <li>Hand out random possessions</li>
+    <li>
+      Hand out
+      <Token type="sanity" />,
+      <Token type="stamina" />
+      and
+      <Token type="slider" multi />.
+    </li>
+    <li>Create monster cup</li>
+    <li>Shuffle monster decks and gate markers</li>
+    <li>Place <Investigator /> on their homes</li>
+    <li>Draw and resolve a non-rumor mythos card</li>
+    <li>Add a doom token</li>
+  </ol>
+</BaseLayout>

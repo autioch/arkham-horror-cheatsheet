@@ -1,0 +1,22 @@
+---
+import MenuComponent from "../components/menu.astro";
+import FooterComponent from "../components/footer.astro";
+
+import "../styles/global.scss";
+const { pageTitle = "" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Arkham Horror{pageTitle.length ? ` - ${pageTitle}` : ""}</title>
+  </head>
+  <body class="w-6/12 m-auto">
+    <MenuComponent />
+    <slot />
+    <FooterComponent />
+  </body>
+</html>

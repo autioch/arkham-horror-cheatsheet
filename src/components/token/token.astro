@@ -1,0 +1,19 @@
+---
+import "./token.scss";
+
+type Props = {
+  type: "clue" | "sanity" | "slider" | "stamina";
+  multi?: boolean;
+};
+
+const labels: Record<Props["type"], string> = {
+  clue: "Clue",
+  sanity: "Sanity",
+  slider: "Slider",
+  stamina: "Stamina",
+};
+
+const { type, multi } = Astro.props;
+---
+
+<span class:list={`token-${type}`}>{labels[type]} Token{multi ? "s" : ""}</span>

@@ -1,0 +1,17 @@
+.active-player {
+    @apply text-amber-800;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+
+    &::before {
+        background-image: url('./active-player.png');
+        content: '';
+        width: 2em;
+        height: 2em;
+        margin-right: .25em;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+}
