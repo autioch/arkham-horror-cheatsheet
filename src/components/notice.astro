@@ -1,0 +1,12 @@
+---
+type Props = {
+  header?: string;
+};
+
+const { header } = Astro.props;
+---
+
+<div class="bg-[#333322] p-2 m-2">
+  {header && <header>{header}</header>}
+  <slot />
+</div>

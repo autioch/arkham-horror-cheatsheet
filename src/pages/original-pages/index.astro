@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/base.astro";
 import { basename } from "node:path";
 
-const posts = await Astro.glob("./*.md");
+const posts = await Astro.glob("./*.mdx");
 ---
 
 <BaseLayout pageTitle="">
