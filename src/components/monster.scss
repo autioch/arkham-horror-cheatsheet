@@ -1,0 +1,9 @@
+.monster {
+    // @apply text-rose-700;
+
+    &::before {
+        background-image: url('./monster.png');
+        width: 1em;
+        height: 1em;
+    }
+}

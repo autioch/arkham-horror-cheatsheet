@@ -1,5 +1,47 @@
 ---
 import BaseLayout from "../layouts/base.astro";
+import Monster from "../components/monster.astro";
 ---
 
-<BaseLayout pageTitle="Game Phases" />
+<BaseLayout pageTitle="Game Phases">
+  <h2>Upkeep</h2>
+  <ul>
+    <li>Refresh Cards</li>
+    <li>Perform Upkeep</li>
+    <li>Use items</li>
+    <li>Adjust sliders</li>
+  </ul>
+  <h2>Movement</h2>
+  <ul>
+    <li>Fight or Evade all <Monster multi /></li>
+    <li>Standup (if previously delayed)</li>
+    <li>OR</li>
+    <li>(Arkham) Move your speed value or less</li>
+    <li>(Other World) Move to right, or back to Arkham</li>
+    <li>Pickup any clues at destination</li>
+  </ul>
+  <h2>Arkham encounters</h2>
+  <h3>No gate? Choose one:</h3>
+  <ul>
+    <li>Location specific action</li>
+    <li>Draw card from the location deck, then shuffle the deck</li>
+  </ul>
+  <h3>Gate:</h3>
+  <ul>
+    <li>Explored: close/seal gate. If succeds, discard monsters with same symol as closed gate</li>
+    <li>Unexplored: Drawn through the gate, draw a card next phase</li>
+  </ul>
+  <h2>Othe world encounters</h2>
+  <ul>
+    <li>Draaw caard -> Discard</li>
+  </ul>
+  <h2>Mythos</h2>
+  <ul>
+    <li>Open Gate (doom token)</li>
+    <li>Spawn monsters</li>
+    <li>Place clue token</li>
+    <li>Move monsters</li>
+    <li>Resolve special ability</li>
+    <li>Resolve any Rumor cards that require "end of turn" actions</li>
+  </ul>
+</BaseLayout>

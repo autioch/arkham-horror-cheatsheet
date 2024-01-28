@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/base.astro";
+import Monster from "../components/monster.astro";
+import Investigator from "../components/investigator.astro";
+import Trophy from "../components/trophy.astro";
+import Token from "../components/token/token.astro";
+---
+
+<BaseLayout pageTitle="Monsters">
+  <Monster />
+
+  <h2>Monster movement type</h2>
+  <ul>
+    <li>Black - normal movement</li>
+    <li>Yellow - stationary</li>
+    <li>Red - Fast, moves twice</li>
+    <li>
+      Green - unique, see the back side of the monster card for movement info
+    </li>
+    <li>
+      Blue - flying, moves to adjacent investigators in the stree, or to the sky
+      if there are none
+    </li>
+  </ul>
+  <h2>Monster special abilities</h2>
+  <ul>
+    <li>Ambush - <Investigator /> cannot flee</li>
+    <li>Endless - <Monster /> cannot be collected as a monster <Trophy /></li>
+    <li>X resistance - 1/2 damage of the resisted type (Round up)</li>
+    <li>x immunity - X damage type is negated</li>
+    <li>
+      Nightmarish X - passing the horror check still costs #
+      <Token type="sanity" />
+    </li>
+    <li>
+      Overwhelming X - defeating the monster still costs #
+      <Token type="stamina" />
+    </li>
+  </ul>
+  <h2>Monster card description (front)</h2>
+  <ul>
+    <li>Frame - movement type</li>
+    <li>Name</li>
+    <li>Evade modifier</li>
+    <li>Movement symbol</li>
+  </ul>
+  <h2>Monster card description (back)</h2>
+  <ul>
+    <li>special abilities</li>
+    <li>instructions</li>
+    <li>Horror modified + sanity cost (for losing?)</li>
+    <li>Combat modified + stamina cost (for losing?)</li>
+    <li>Toughness (number of wounds)</li>
+  </ul>
+</BaseLayout>

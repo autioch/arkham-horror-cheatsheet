@@ -3,6 +3,10 @@ import MenuComponent from "../components/menu.astro";
 import FooterComponent from "../components/footer.astro";
 
 import "../styles/global.scss";
+type Props = {
+  pageTitle: string;
+};
+
 const { pageTitle = "" } = Astro.props;
 ---
 

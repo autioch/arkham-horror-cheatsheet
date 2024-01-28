@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/base.astro";
+---
+
+<BaseLayout pageTitle="Combat">
+  <ol class="text-xl list-decimal list-inside">
+    <li>
+      <span>evade check (skip to horror check if not evading)</span>
+      <ol class="text-xl list-decimal list-inside">
+        <li>win - battle ends</li>
+        <li>lose - lose stamina (optional?)</li>
+      </ol>
+    </li>
+    <li>
+      <span>horror check</span>
+      <ol class="text-xl list-decimal list-inside">
+        <li>win</li>
+        <li>lose - lose sanity</li>
+      </ol>
+    </li>
+    <li>
+      <span>fight or flee</span>
+    </li>
+    <li></li>
+  </ol>
+</BaseLayout>
+<style>
+  ol ol {
+    margin-left: 2em;
+  }
+</style>
