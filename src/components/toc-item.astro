@@ -1,0 +1,10 @@
+---
+type Props = {
+  el: HTMLElement;
+};
+const { el } = Astro.props;
+---
+
+<li>
+  <a href={`#${el.id}`}>{el.textContent}</a>
+</li>

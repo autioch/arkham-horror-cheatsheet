@@ -14,3 +14,47 @@
         background-repeat: no-repeat;
     }
 }
+
+
+#toc {
+    counter-reset: header1;
+}
+
+.toc-H1 {
+    counter-increment: header1;
+    counter-reset: header2;
+}
+
+.toc-H1::before {
+    content: counter(header1)".";
+    margin-right: .25em;
+}
+
+.toc-H2 {
+    counter-increment: header2;
+    counter-reset: header3;
+}
+
+.toc-H2::before {
+    content: counter(header2)".";
+    margin-right: .25em;
+}
+
+.toc-H3 {
+    counter-increment: header3;
+    counter-reset: header4;
+}
+
+.toc-H3::before {
+    content: counter(header3)".";
+    margin-right: .25em;
+}
+
+.toc-H4 {
+    counter-increment: header4;
+}
+
+.toc-H4::before {
+    content: counter(header4) ".";
+    margin-right: .25em;
+}

@@ -1,28 +1,12 @@
 ---
-import MenuComponent from "../components/menu.astro";
-
 import "../styles/global.scss";
 type Props = {
   pageTitle: string;
 };
-
-const { pageTitle = "" } = Astro.props;
 ---
 
-<html lang="en dark">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Arkham Horror{pageTitle.length ? ` - ${pageTitle}` : ""}</title>
-  </head>
-  <body class="w-6/12 m-auto bg-gray-900 text-gray-50">
-    <div class="flex">
-      <MenuComponent />
-      <main class="p-4">
-        <div
-          class="text-orange-500
+<div
+  class="text-orange-500
           prose dark:prose-invert
   prose-h1:font-bold prose-h1:text-xl
   prose-h1:text-gray-50
@@ -31,12 +15,10 @@ const { pageTitle = "" } = Astro.props;
   prose-h4:text-gray-50
   prose-p:text-gray-50
   prose-li:text-gray-50
+  prose-strong:text-gray-50
   prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
-  prose-headings:underline"
-        >
-          <slot />
-        </div>
-      </main>
-    </div>
-  </body>
-</html>
+  prose-headings:underline
+  max-w-none"
+>
+  <slot />
+</div>

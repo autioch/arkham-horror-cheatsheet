@@ -1,8 +1,44 @@
 ---
 import BaseLayout from "../../layouts/base.astro";
+import { basename } from "node:path";
+
 const posts = await Astro.glob("./*.md");
 ---
 
 <BaseLayout pageTitle="">
-  {posts.map((post) => post.rawContent())}
+  <div class="flex">
+    <div>
+      {
+        posts
+          .sort(
+            (a, b) => parseInt(basename(a.file)) - parseInt(basename(b.file))
+          )
+          .map((post) => <post.Content />)
+      }
+    </div>
+    <ol id="toc" class="pl-6 h-dvh overflow-auto sticky top-0 flex-none">
+      <script>
+        const tocEl = document.getElementById("toc");
+        const paddingClass = {
+          H1: "pl-0",
+          H2: "pl-2",
+          H3: "pl-4",
+          H4: "pl-6",
+        };
+        [...document.querySelectorAll("h1[id],h2[id],h3[id],h4[id]")].map(
+          (el) => {
+            const liEl = document.createElement("li");
+            const aEl = document.createElement("a");
+
+            aEl.href = `#${el.id}`;
+            aEl.textContent = el.textContent;
+
+            liEl.classList.add(paddingClass[el.tagName], `toc-${el.tagName}`);
+            liEl.append(aEl);
+            tocEl?.append(liEl);
+          }
+        );
+      </script>
+    </ol>
+  </div>
 </BaseLayout>
