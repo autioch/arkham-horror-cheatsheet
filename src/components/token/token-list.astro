@@ -13,5 +13,7 @@ const { group, label } = Astro.props;
 
 <div>
   <h2 class="mt-4">{label}</h2>
-  {Object.entries(group).map(([type]) => <Token type={type as TokenType} />)}
+  <ul class="">
+    {Object.entries(group).map(([type]) => <li><Token type={type as TokenType} /></li>)}
+  </ul>
 </div>
