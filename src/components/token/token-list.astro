@@ -13,7 +13,5 @@ const { group, label } = Astro.props;
 
 <div>
   <h2 class="mt-4">{label}</h2>
-  <ul class="list-disc list-inside">
-    {Object.entries(group).map(([type]) => <Token type={type as TokenType} />)}
-  </ul>
+  {Object.entries(group).map(([type]) => <Token type={type as TokenType} />)}
 </div>

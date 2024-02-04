@@ -13,7 +13,7 @@ const { type, multi } = Astro.props;
 const item = tokens[type];
 ---
 
-<span class="flex items-center">
+<span class="inline-flex items-center">
   <img src={item.img} class="token__img" />
   <span class:list={item.color} class="token__text">
     {item.label}{multi ? "s" : ""}
