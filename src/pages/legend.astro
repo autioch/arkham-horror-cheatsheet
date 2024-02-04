@@ -1,48 +1,21 @@
 ---
 import BaseLayout from "../layouts/base.astro";
-import Token from "../components/token/token.astro";
-import ActivePlayer from "../components/active-player/active-player.astro";
-import Card from '../components/card/card.astro'
+import {
+  counters,
+  characters,
+  cards,
+  zones,
+  marks,
+} from "../components/token/definitions";
+import TokenList from "../components/token/token-list.astro";
 ---
 
 <BaseLayout pageTitle="Legend">
-  <h2>Tokens</h2>
-  <ul class="text-xl list-disc list-inside">
-    <li>
-      <Token type="clue" />
-    </li>
-    <li>
-      <Token type="sanity" />
-    </li>
-    <li>
-      <Token type="slider" />
-    </li>
-    <li>
-      <Token type="stamina" />
-    </li>
-  </ul>
-  <h2>Cards</h2>
-  <ul class="text-xl list-disc list-inside">
-    <li>
-      <Card type="ally" />
-    </li>
-    <li>
-      <Card type="item-common" />
-    </li>
-    <li>
-      <Card type="item-unique" />
-    </li>
-    <li>
-      <Card type="skill" />
-    </li>
-    <li>
-      <Card type="spell" />
-    </li>
-  </ul>
-  <h2>Misc</h2>
-  <ul class="text-xl list-disc list-inside">
-    <li>
-      <ActivePlayer />
-    </li>
-  </ul>
+  <div class="_text-xl sm:grid sm:grid-cols-2 lg:grid-cols-3">
+    <TokenList label="Counters" group={counters} />
+    <TokenList label="Marks" group={marks} />
+    <TokenList label="Cards" group={cards} />
+    <TokenList label="Zones" group={zones} />
+    <TokenList label="Characters" group={characters} />
+  </div>
 </BaseLayout>

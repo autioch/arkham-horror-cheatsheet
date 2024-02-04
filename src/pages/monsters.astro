@@ -1,13 +1,10 @@
 ---
 import BaseLayout from "../layouts/base.astro";
-import Monster from "../components/monster.astro";
-import Investigator from "../components/investigator.astro";
-import Trophy from "../components/trophy.astro";
 import Token from "../components/token/token.astro";
 ---
 
 <BaseLayout pageTitle="Monsters">
-  <Monster />
+  <Token type="monster" />
 
   <h2>Monster movement type</h2>
   <ul>
@@ -24,8 +21,8 @@ import Token from "../components/token/token.astro";
   </ul>
   <h2>Monster special abilities</h2>
   <ul>
-    <li>Ambush - <Investigator /> cannot flee</li>
-    <li>Endless - <Monster /> cannot be collected as a monster <Trophy /></li>
+    <li>Ambush - <Token type="investigator" /> cannot flee</li>
+    <li>Endless - <Token type="monster" /> cannot be collected as a monster trophy</li>
     <li>X resistance - 1/2 damage of the resisted type (Round up)</li>
     <li>x immunity - X damage type is negated</li>
     <li>

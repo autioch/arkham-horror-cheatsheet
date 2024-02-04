@@ -1,39 +1,12 @@
-[class^=token-] {
-
-    &::before {
-        width: 1em;
-        height: 1em;
-    }
+.token__text {
+    // display: inline-flex;
+    // vertical-align: middle;
+    // align-items: center;
+    font-weight: 600;
 }
 
-.token-clue {
-    color: forestgreen;
-
-    &::before {
-        background-image: url('./images/clue.png');
-    }
-}
-
-.token-sanity {
-    color: dodgerblue;
-
-    &::before {
-        background-image: url('./images/sanity.png');
-    }
-}
-
-.token-slider {
-    color: blueviolet;
-
-    &::before {
-        background-image: url('./images/slider.png');
-    }
-}
-
-.token-stamina {
-    color: crimson;
-
-    &::before {
-        background-image: url('./images/stamina.png');
-    }
+.token__img {
+    max-width: 2em;
+    max-height: 1em;
+    margin-right: .25em;
 }

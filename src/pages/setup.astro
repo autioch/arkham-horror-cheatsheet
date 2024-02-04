@@ -1,21 +1,18 @@
 ---
 import BaseLayout from "../layouts/base.astro";
 import Token from "../components/token/token.astro";
-import LocationUnstable from "../components/location-unstable.astro";
-import ActivePlayer from "../components/active-player/active-player.astro";
-import Investigator from "../components/investigator.astro";
 ---
 
 <BaseLayout pageTitle="Game setup">
   <ol class="list-decimal">
     <li>Prepare playing area.</li>
-    <li>Place <Token type="clue" /> on <LocationUnstable />.</li>
-    <li>Select first player and give <ActivePlayer /> to them.</li>
-    <li>Detemine <Investigator /></li>
+    <li>Place <Token type="clue" /> on <Token type="unstable" />.</li>
+    <li>Select first player and give <Token type="active-player" /> to them.</li>
+    <li>Detemine <Token type="investigator" /></li>
     <li>Choose ancient one randomly</li>
     <li>Place decks</li>
     <li>Hand out fixed possessions</li>
-    <li>Shuffle <Investigator /> decks</li>
+    <li>Shuffle <Token type="investigator" /> decks</li>
     <li>Hand out random possessions</li>
     <li>
       Hand out
@@ -26,7 +23,7 @@ import Investigator from "../components/investigator.astro";
     </li>
     <li>Create monster cup</li>
     <li>Shuffle monster decks and gate markers</li>
-    <li>Place <Investigator /> on their homes</li>
+    <li>Place <Token type="investigator" /> on their homes</li>
     <li>Draw and resolve a non-rumor mythos card</li>
     <li>Add a doom token</li>
   </ol>

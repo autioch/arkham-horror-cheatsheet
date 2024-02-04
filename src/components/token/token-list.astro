@@ -1,0 +1,19 @@
+---
+import "./token.scss";
+import Token from "./token.astro";
+import type { TokenDict, Token as TokenType } from "./types";
+
+type Props = {
+  label: string;
+  group: TokenDict<any>;
+};
+
+const { group, label } = Astro.props;
+---
+
+<div>
+  <h2 class="mt-4">{label}</h2>
+  <ul class="list-disc list-inside">
+    {Object.entries(group).map(([type]) => <Token type={type as TokenType} />)}
+  </ul>
+</div>

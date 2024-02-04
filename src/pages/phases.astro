@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/base.astro";
-import Monster from "../components/monster.astro";
+import Token from "../components/token/token.astro";
 ---
 
 <BaseLayout pageTitle="Game Phases">
@@ -13,7 +13,7 @@ import Monster from "../components/monster.astro";
   </ul>
   <h2>Movement</h2>
   <ul>
-    <li>Fight or Evade all <Monster multi /></li>
+    <li>Fight or Evade all <Token type="monster" multi /></li>
     <li>Standup (if previously delayed)</li>
     <li>OR</li>
     <li>(Arkham) Move your speed value or less</li>

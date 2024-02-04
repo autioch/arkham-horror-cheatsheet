@@ -1,9 +1,0 @@
----
-import "./monster.scss";
-import { type Multi, m } from "../utils/multi";
-
-type Props = {} & Multi;
-const { multi } = Astro.props;
----
-
-<span class="monster with-icon">Monster{m(multi)}</span>

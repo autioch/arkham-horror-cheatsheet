@@ -1,0 +1,102 @@
+import fs from 'node:fs/promises';
+import { basename } from 'node:path';
+
+const screens = [
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Silence_Falls.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Vincent_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Vincent.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Unique_4.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Unique_3.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Unique_2.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Unique_1.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Tile_4_Face_2.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Tile_4_Face_1.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Tile_3_Face_2.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Tile_3_Face_1.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Tile_2_Face_2.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Tile_2_Face_1.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Tile_1_Face_2.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Tile_1_Face_1.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Spells.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Skills.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Sister_Mary_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Sister_Mary.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Pete_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Pete.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Outer_3.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Outer_2.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Outer_1.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Misc_Cards.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Michael_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Michael.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Mandy_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Mandy.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Kate_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Kate.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Joe_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Joe.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Jenny_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Jenny.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Jack_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Jack.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Harvey_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Harvey.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Gloria_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Gloria.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Full_Horror.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Equipment_3.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Equipment_2.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Equipment_1.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Eat_Them.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Dinner_Is_Served.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Dinner_2.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Dinner_1.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Dexter_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Dexter.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Darrell_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Darrell.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Carolyn_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Carolyn.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Card_Backs.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Box_Front.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Box_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Bob_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Bob.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Board.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Area_Uptown.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Area_Terror_Track.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Area_Southside.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Area_Rivertown.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Area_Northside.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Area_Miskatonic.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Area_Merchant_District.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Area_French_Hill.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Area_Easttown.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Area_Downtown.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Area_City_Limits.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_AO_Yog_Sothoth.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_AO_Yig.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_AO_Shub_Niggurath.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_AO_Nyarlathotep.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_AO_Ithaqua.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_AO_Hastur.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_AO_Cthulhu.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_AO_Azathoth.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Ancient_Ones_Card_Backs.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Amanda_Back.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Amanda.jpg",
+    "https://jr165.me.uk/wp-content/uploads/2018/12/ArkH_Allies.jpg"
+]
+
+
+for (const url of screens) {
+
+    const fileName = basename(url);
+
+    const resp = await fetch(url);
+
+    // const data = await resp.body
+    await fs.writeFile('./' + fileName,resp.body);
+
+
+}

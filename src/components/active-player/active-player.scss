@@ -1,9 +1,0 @@
-.active-player {
-    @apply text-amber-800;
-
-    &::before {
-        background-image: url('./active-player.png');
-        width: 2em;
-        height: 2em;
-    }
-}

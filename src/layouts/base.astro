@@ -18,8 +18,11 @@ const { pageTitle = "" } = Astro.props;
     <title>Arkham Horror{pageTitle.length ? ` - ${pageTitle}` : ""}</title>
   </head>
   <body>
-    <div class="flex">
-      <MenuComponent />
+    <div>
+      <header class="flex">
+        <MenuComponent />
+        <div>{pageTitle}</div>
+      </header>
       <main class="p-4">
         <slot />
       </main>

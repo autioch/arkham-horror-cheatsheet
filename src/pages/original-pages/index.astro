@@ -6,7 +6,7 @@ import { basename } from "node:path";
 const posts = await Astro.glob("./*.mdx");
 ---
 
-<BaseLayout pageTitle="">
+<BaseLayout pageTitle="Oryginalna instrukcja">
   <div class="flex">
     <div>
       {
@@ -17,7 +17,7 @@ const posts = await Astro.glob("./*.mdx");
           .map((post) => <post.Content />)
       }
     </div>
-    <ol id="toc" class="pl-6 h-dvh overflow-auto sticky top-0 flex-none">
+    <ol id="toc" class="pl-6 h-dvh overflow-auto sticky top-0 flex-none hidden lg :block">
       <script>
         const tocEl = document.getElementById("toc");
 
